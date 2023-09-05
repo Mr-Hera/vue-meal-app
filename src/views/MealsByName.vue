@@ -10,7 +10,7 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-8">
         <div v-for="meal of meals" :key="meal.idMeal" class="bg-white shadow rounded-xl">
-            <router-link to="#">
+            <router-link :to="{ name: 'mealDetails', params: {id: meal.idMeal} }">
                 <img :src="meal.strMealThumb" :alt="meal.strTMeal" class="rounded-t-xl h-48 w-full object-cover" />
             </router-link>
             <div class="p-3">
@@ -20,13 +20,7 @@
                     dolor nemo laudantium quo culpa natus obcaecati voluptatem accusantium, repellendus veritatis vero ab corrupti, numquam velit modi!
                 </p>
                 <div class="flex items-center justify-between">
-                    <a
-                      :href="meal.strYoutube"
-                      class="px-3 py-2 rounded border-2 text-white border-red-600 bg-red-500 hover:bg-red-600 hover:text-white transition-colors"
-                      target="_blank"
-                    >
-                        YouTube
-                    </a>
+                    <YouTubeButton :href="meal.strYoutube" />
                     <!-- <router-link
                       class="px-3 py-2 rounded border-2 text-white border-purple-600 bg-purple-500 hover:bg-purple-600 hover:text-white transition-colors"
                       target="_blank"
@@ -44,6 +38,8 @@
     import { computed, ref, onMounted } from 'vue'
     import store from '../store'
     import { useRoute } from 'vue-router'
+
+    import YouTubeButton from '../components/YouTubeButton.vue'
 
     const keyword = ref('')
     const meals = computed(() => store.state.searchedMeals)
