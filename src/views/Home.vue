@@ -1,8 +1,13 @@
 <template>
-    <div class="flex flex-col p-8">
+    <div class="flex flex-col p-8 items-center">
         <!-- comment -->
     
-        
+        <pre>Here we explore a food meal app where you can search a meal by a name, a letter or an ingredient</pre>
+        <pre>Coded in Vue Js</pre>
+        <pre>Coded by Randell Hera</pre>
+        <mark><a href="mailto:randellhera@gmail.com">Send Email</a></mark>
+        <q title="Checkout my Github"><a href="mailto:randellhera@gmail.com">Github</a></q>
+        🚀
 
         <!-- <pre>{{ ingredients }}</pre> -->
     </div>
